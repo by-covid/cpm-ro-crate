@@ -26,8 +26,7 @@ This document specifies how to identify and handle CPM compliant provenance file
       <th>Description</th>
    </tr>
    <tr>
-      <td colspan="3"><strong>CPMProvenanceFile \
-         </strong>extends <a href="http://schema.org/MediaObject">MediaObject</a> (@id is resolvable), dataEntity
+      <td colspan="3"><strong>CPMProvenanceFile</strong> extends <a href="http://schema.org/MediaObject">MediaObject</a> (@id is resolvable), dataEntity
       </td>
    </tr>
    <tr>
@@ -89,13 +88,16 @@ This document specifies how to identify and handle CPM compliant provenance file
                (PROV-JSON)
                   Example:
                <pre>
-                  { "@id: "provone.ttl", "@type" ["File", "CPMProvenanceFile"],
-                  "encodingFormat": [ \
-                  "text/turtle", \
-                  {"@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/"} \
-                  ]
-                  {"@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/", \
-                  "@type": "CreativeWork"}
+{ "@id: "provone.ttl", 
+  "@type" ["File", "CPMProvenanceFile"],
+  "encodingFormat": [ 
+      "text/turtle", 
+      {"@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/"}
+   ]
+},
+{ "@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/", 
+  "@type": "CreativeWork"
+}
                </pre>
             </li>
          </ul>
@@ -110,9 +112,8 @@ This document specifies how to identify and handle CPM compliant provenance file
       </td>
    </tr>
    <tr>
-      <td colspan="3"><strong>CPMMetaProvenanceFile \
-         </strong>extends CPMProvenanceFile
-      </td>
+      <th colspan="3"><strong>CPMMetaProvenanceFile</strong>extends CPMProvenanceFile
+      </th>
    </tr>
    <tr>
       <td>@type</td>
@@ -166,12 +167,14 @@ This document specifies how to identify and handle CPM compliant provenance file
                   Example:
                <pre>
                   { "@id: "provone.ttl", "@type" ["File", "CPMProvenanceFile"],
-                  "encodingFormat": [ \
-                  "text/turtle", \
-                  {"@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/"} \
-                  ]
-                  {"@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/", \
-                  "@type": "CreativeWork"}
+                    "encodingFormat": [
+                        "text/turtle",
+                        {"@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/"}
+                     ]
+                  },
+                  {  "@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/",
+                     "@type": "CreativeWork"
+                  }
                </pre>
             </li>
          </ul>
@@ -429,13 +432,16 @@ As a result, each RO-Crate must contain:
                   Example:
                </p>
                <pre>
- { "@id: "provone.ttl", "@type" cpm:CPMProvenanceFile,
- "encodingFormat": [ \
-   "text/turtle", \
-   {"@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/"} \
- ]
- {"@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/", \
- "@type": "CreativeWork"}
+ { "@id: "provone.ttl", 
+   "@type" cpm:CPMProvenanceFile,
+   "encodingFormat": [
+     "text/turtle",
+     {"@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/"}
+   ]
+ },
+ { "@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/",
+   "@type": "CreativeWork"
+ }
  </pre>
             </li>
          </ul>
@@ -454,8 +460,7 @@ As a result, each RO-Crate must contain:
       <td></td>
    </tr>
    <tr>
-      <td colspan="3"><strong>CPMMetaProvenanceFile \
-         </strong>extends CPMProvenanceFile
+      <td colspan="3"><strong>CPMMetaProvenanceFile</strong>extends CPMProvenanceFile
       </td>
    </tr>
    <tr>
