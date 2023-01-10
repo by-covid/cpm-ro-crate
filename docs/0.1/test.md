@@ -1,6 +1,4 @@
----
-
----
+<main>
 <h1>Common Provenance Model RO-Crate profile</h1>
 <p>Research objects, such as data, experimental results, computational models, or
         biological samples, are exchanged between organizations, so each of the organizations can provide provenance
@@ -799,3 +797,4 @@
             identified bundles SHOULD ensure their internally defined identifier also match this identifier.
     </p>
 </div>
+</main>
