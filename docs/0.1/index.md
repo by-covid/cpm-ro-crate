@@ -14,7 +14,7 @@ This document specifies how to identify and handle CPM compliant provenance file
 * Each CPM compliant provenance bundle MUST be serialized into a standalone file. 
 * The RO-Crate MAY contain multiple CPM compliant bundles/files. 
 * The RO-Crate MUST include references to all CPM compliant provenance bundles/files present in the crate (arbitrary provenance files or log files do not need to be mentioned).
-    * _Rationale: Each CPM provenance bundle is part of a distributed provenance chain. As a consequence, any such bundle can be referenced from other parts of the chain, which can be stored externally (outside the crate). For that reason, the RO-Crate must provide means to identify and locate any of the CPM compliant provenance bundles present in the crate. _
+    * _Rationale: Each CPM provenance bundle is part of a distributed provenance chain. As a consequence, any such bundle can be referenced from other parts of the chain, which can be stored externally (outside the crate). For that reason, the RO-Crate must provide means to identify and locate any of the CPM compliant provenance bundles present in the crate._
 * The RO-Crate MAY include a meta provenance file. Multiple meta-provenance bundles MAY be present in the meta provenance file. 
     * _Rationale: This is to keep meta provenance handling simple. If multiple meta provenance files would be allowed, then we would have to set requirements on how meta provenance can be split across the files, which might introduce unnecessary complexity._
 * The RO Crate MUST include a reference to the meta provenance file, if present. 
@@ -25,9 +25,11 @@ This document specifies how to identify and handle CPM compliant provenance file
       <th>Required?</th>
       <th>Description</th>
    </tr>
+   <tr><td colspan="3"> </td</tr>
    <tr>
-      <td colspan="3"><strong>CPMProvenanceFile</strong> extends <a href="http://schema.org/MediaObject">MediaObject</a> (@id is resolvable), dataEntity
-      </td>
+      <th colspan="3"><strong>CPMProvenanceFile</strong> <br />
+      extends <a href="http://schema.org/MediaObject">MediaObject</a> (@id is resolvable), dataEntity
+      </th>
    </tr>
    <tr>
       <td>@type</td>
@@ -35,6 +37,7 @@ This document specifies how to identify and handle CPM compliant provenance file
       <td>Type that identifies the CPM provenance file.
          <p>
             Array MUST include "File". Array MUST include "CPMProvenanceFile".
+         </p>
       </td>
    </tr>
    <tr>
@@ -44,6 +47,7 @@ This document specifies how to identify and handle CPM compliant provenance file
          <p>
             SHOULD be a relative URI to a data entity in the crate (e.g. <code>"provenance/prov-training.provn"</code>)
             but MAY be an absolute URI . Resolving this identifier MUST return this provenance file in the given format.
+         </p>
       </td>
    </tr>
    <tr>
@@ -52,6 +56,7 @@ This document specifies how to identify and handle CPM compliant provenance file
       <td>Identifier of a provenance bundle present in the CPM provenance file.
          <p>
             MUST be an absolute URI. MUST match the expanded bundle identifier[^2]. MAY be equal to @id if absolute.
+         </p>
       </td>
    </tr>
    <tr>
@@ -61,6 +66,7 @@ This document specifies how to identify and handle CPM compliant provenance file
          finalized or the file was added to the RO-Crate).
          <p>
             MUST be a string with format "ddMMYYYY".
+         </p>
       </td>
    </tr>
    <tr>
@@ -86,7 +92,9 @@ This document specifies how to identify and handle CPM compliant provenance file
             <li><a
                   href="http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/">http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/</a>
                (PROV-JSON)
+               <p>
                   Example:
+               </p>
                <pre>
 { "@id: "provone.ttl", 
   "@type" ["File", "CPMProvenanceFile"],
@@ -109,11 +117,12 @@ This document specifies how to identify and handle CPM compliant provenance file
       <td>Array contains entity identifiers, which are documented by the CPM provenance file.
          <p>
             SHOULD contain at least one identifier.
+         </p>            
       </td>
    </tr>
    <tr>
-      <th colspan="3"><strong>CPMMetaProvenanceFile</strong>extends CPMProvenanceFile
-      </th>
+      <th colspan="3"><strong>CPMMetaProvenanceFile</strong> <br />
+      extends CPMProvenanceFile</th>
    </tr>
    <tr>
       <td>@type</td>
@@ -139,6 +148,7 @@ This document specifies how to identify and handle CPM compliant provenance file
          finalized or the file was added to the RO-Crate).
          <p>
             MUST be a string with format "ddMMYYYY".
+         </p>
       </td>
    </tr>
    <tr>
@@ -187,6 +197,7 @@ This document specifies how to identify and handle CPM compliant provenance file
          <p>
             Array MUST contain absolute URIs. URIs MUST match the expanded bundle identifiers as used internally in the
             CPM provenance files.
+         </p>
       </td>
    </tr>
 </table>
@@ -217,13 +228,13 @@ The example RO-Crate documents a single step computation implemented as a python
     "datePublished": "2022",
     "conformsTo": [
        {"@id": "https://w3id.org/ro/wfrun/0.1/process"},
-	{"@id": "https://w3id.org/cpm/crate/0.1??"},
+	    {"@id": "https://w3id.org/cpm/crate/0.1"},
     ],
-    "name": "",
+    "name": "...",
     "description": "",
     "hasPart": [
         {
-        "@id": "INPUT_DATASET_PATH"
+          "@id": "INPUT_DATASET_PATH"
         },
         {
           "@id": "OUTPUT_DATASET_PATH"
@@ -339,24 +350,22 @@ Since RO Crates primarily work on a file system level, the most natural way to e
 
 As a result, each RO-Crate must contain:
 
-
-
 1. Do we also want to include the identifier of a bundle in the RO crate? This might be necessary if we allow multiple bundles in a single file, to enable references to a specific bundle. This specification also does not cover cases when (for instance) we have provn with 2 named bundles and one top-level-instance bundle. 
 
 
-### **General Requirements**
+### General Requirements
 
 
 <table>
    <tr>
-      <th>Type/Property</strong>[^5]</td>
+      <th>Type/Property</strong></td>
       <th>Required?</th>
       <th>Description</th>
    </tr>
    <tr>
-      <td colspan="3"><strong>CPMProvenanceFile \
-         </strong>extends <a href="http://schema.org/MediaObject">MediaObject</a> (@id is resolvable), dataEntity
-      </td>
+      <th colspan="3"><strong>CPMProvenanceFile</strong> <br />
+        extends <a href="http://schema.org/MediaObject">MediaObject</a> (@id is resolvable), dataEntity
+      </th>
    </tr>
    <tr>
       <td>@type</td>
@@ -460,7 +469,8 @@ As a result, each RO-Crate must contain:
       <td></td>
    </tr>
    <tr>
-      <td colspan="3"><strong>CPMMetaProvenanceFile</strong>extends CPMProvenanceFile
+      <td colspan="3"><strong>CPMMetaProvenanceFile</strong><br />
+      extends CPMProvenanceFile
       </td>
    </tr>
    <tr>
