@@ -1,3 +1,5 @@
 theme: jekyll-theme-slate
 title: Common Provenance Model RO-Crate profile
 description: RO-Crate profiles to capture W3C PROV provenance that follows the Common Provenance Model.
+markdown: kramdown
+parse_block_html: true
