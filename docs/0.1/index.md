@@ -383,13 +383,14 @@ As a result, each RO-Crate must contain:
    <tr>
       <td><a href="https://schema.org/identifier">identifier</a></td>
       <td>SHOULD</td>
-      <td>If this provenance file contains only a single fragment or meta bundle, then this property MUST be present. \
-         \
-         If present: \
+      <td>If this provenance file contains only a single fragment or meta bundle, then this property MUST be present. <br />
+         <br />
+         If present: <br />
          MUST be absolute URI. MUST match expanded bundle identifier as defined within the meta-bundle provenance[^6].
          MAY be equal to @id if absolute.
          <p>
             If not present: property hasPart must be specified.
+         </p>
       </td>
    </tr>
    <tr>
@@ -398,8 +399,9 @@ As a result, each RO-Crate must contain:
       <td>If this provenance file contains more than one fragment bundle, then this property MUST be present to identify
          them.
          <p>
-            If present, each of the members: \
+            If present, each of the members: <br />
             MUST be absolute URI. MUST match expanded bundle identifier as defined within the meta-bundle provenance.
+         </p>
       </td>
    </tr>
    <tr>
