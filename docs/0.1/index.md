@@ -75,24 +75,18 @@ This document specifies how to identify and handle CPM compliant provenance file
             Array MUST also contain a reference to a CreativeWork that indicates the PROV format used in the
             serialization. "@id" SHOULD be one of:
          <ul>
-
             <li><a
                   href="http://www.w3.org/TR/2013/REC-prov-n-20130430/">http://www.w3.org/TR/2013/REC-prov-n-20130430/</a>
                (PROV-N)
-
             <li><a
                   href="http://www.w3.org/TR/2013/REC-prov-o-20130430/">http://www.w3.org/TR/2013/REC-prov-o-20130430/</a>
                (PROV-O as RDF or OWL)
-
             <li><a
                   href="http://www.w3.org/TR/2013/NOTE-prov-xml-20130430/">http://www.w3.org/TR/2013/NOTE-prov-xml-20130430/</a>
                (PROV-XML)
-
             <li><a
                   href="http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/">http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/</a>
                (PROV-JSON)
-
-               <p>
                   Example:
                <pre>
                   { "@id: "provone.ttl", "@type" ["File", "CPMProvenanceFile"],
@@ -157,23 +151,18 @@ This document specifies how to identify and handle CPM compliant provenance file
             Array MUST also contain a reference to a CreativeWork that indicates the PROV format used in the
             serialization. "@id" SHOULD be one of:
          <ul>
-
             <li><a
                   href="http://www.w3.org/TR/2013/REC-prov-n-20130430/">http://www.w3.org/TR/2013/REC-prov-n-20130430/</a>
                (PROV-N)
-
             <li><a
                   href="http://www.w3.org/TR/2013/REC-prov-o-20130430/">http://www.w3.org/TR/2013/REC-prov-o-20130430/</a>
                (PROV-O as RDF or OWL)
-
             <li><a
                   href="http://www.w3.org/TR/2013/NOTE-prov-xml-20130430/">http://www.w3.org/TR/2013/NOTE-prov-xml-20130430/</a>
                (PROV-XML)
-
             <li><a
                   href="http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/">http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/</a>
                (PROV-JSON)
-
                   Example:
                <pre>
                   { "@id: "provone.ttl", "@type" ["File", "CPMProvenanceFile"],
@@ -424,23 +413,18 @@ As a result, each RO-Crate must contain:
             Array MUST also contain a reference to CreativeWork that indicates the PROV format used in the
             serialization. "@id" SHOULD be one of:
          <ul>
-
             <li><a
                   href="http://www.w3.org/TR/2013/REC-prov-n-20130430/">http://www.w3.org/TR/2013/REC-prov-n-20130430/</a>
                (PROV-N)
-
             <li><a
                   href="http://www.w3.org/TR/2013/REC-prov-o-20130430/">http://www.w3.org/TR/2013/REC-prov-o-20130430/</a>
                (PROV-O as RDF or OWL)
-
             <li><a
                   href="http://www.w3.org/TR/2013/NOTE-prov-xml-20130430/">http://www.w3.org/TR/2013/NOTE-prov-xml-20130430/</a>
                (PROV-XML)
-
             <li><a
                   href="http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/">http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/</a>
                (PROV-JSON)
-
                <p>
                   Example:
                </p>
