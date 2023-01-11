@@ -4,7 +4,7 @@
 
 Research objects, such as data, experimental results, computational models, or biological samples, are exchanged between organizations, so each of the organizations can provide provenance information only about a part of the research object’s life cycle. As a result, a complete provenance description of the object is then spread across different heterogeneous organizations. The Common Provenance Model (CPM) provides a baseline for such distributed provenance chains. It defines how to interconnect distributed provenance parts encapsulated in PROV bundles, how to express standardized derivation paths between inputs and outputs of a process in a single bundle (so called provenance backbone), and how to attach domain specific information to the chain in a harmonized way. 
 
-This document specifies how to identify and handle CPM compliant provenance files and CPM compliant meta-provenance files in an RO-Crate. 
+This document specifies how to identify and handle CPM compliant provenance files and CPM compliant meta-provenance files in an [RO-Crate](https://www.researchobject.org/ro-crate/). 
 
 * CPM Publication: <https://doi.org/10.1038/s41597-022-01537-6>
 
@@ -19,83 +19,83 @@ This document specifies how to identify and handle CPM compliant provenance file
     * _Rationale: This is to keep meta provenance handling simple. If multiple meta provenance files would be allowed, then we would have to set requirements on how meta provenance can be split across the files, which might introduce unnecessary complexity._
 * The RO Crate MUST include a reference to the meta provenance file, if present. 
 
-<table>
-   <tr>
+ <table>
+    <tr>
       <th>Type/Property</th>
       <th>Required?</th>
       <th>Description</th>
-   </tr>
-   <tr><td colspan="3"> </td</tr>
-   <tr>
-      <th colspan="3"><strong>CPMProvenanceFile</strong> <br />
-      extends <a href="http://schema.org/MediaObject">MediaObject</a> (@id is resolvable), dataEntity
-      </th>
-   </tr>
-   <tr>
+    </tr>
+    <tr>
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <th colspan="3"><strong>CPMProvenanceFile</strong><br />
+      extends <a href="http://schema.org/MediaObject">MediaObject</a> (@id is
+      resolvable), dataEntity</th>
+    </tr>
+    <tr>
       <td>@type</td>
       <td>MUST</td>
-      <td>Type that identifies the CPM provenance file.
-         <p>
-            Array MUST include "File". Array MUST include "CPMProvenanceFile".
-         </p>
+      <td>
+        Type that identifies the CPM provenance file.
+        <p>Array MUST include "File". Array MUST include "CPMProvenanceFile".</p>
       </td>
-   </tr>
-   <tr>
+    </tr>
+    <tr>
       <td>@id</td>
       <td>MUST</td>
-      <td>Identifier of the CPM provenance file.
-         <p>
-            SHOULD be a relative URI to a data entity in the crate (e.g. <code>"provenance/prov-training.provn"</code>)
-            but MAY be an absolute URI . Resolving this identifier MUST return this provenance file in the given format.
-         </p>
+      <td>
+        Identifier of the CPM provenance file.
+        <p>SHOULD be a relative URI to a data entity in the crate (e.g.
+        <code>"provenance/prov-training.provn"</code>) but MAY be an absolute URI .
+        Resolving this identifier MUST return this provenance file in the given
+        format.</p>
       </td>
-   </tr>
-   <tr>
+    </tr>
+    <tr>
       <td><a href="https://schema.org/identifier">identifier</a></td>
       <td>SHOULD</td>
-      <td>Identifier of a provenance bundle present in the CPM provenance file.
-         <p>
-            MUST be an absolute URI. MUST match the expanded bundle identifier[^2]. MAY be equal to @id if absolute.
-         </p>
+      <td>
+        Identifier of a provenance bundle present in the CPM provenance file.
+        <p>MUST be an absolute URI. MUST match the expanded bundle identifier. MAY be
+        equal to @id if absolute.</p>
+        <p>Note: PROV formats that support identified bundles SHOULD ensure their internally defined identifier also matches this identifier.</p>
       </td>
-   </tr>
-   <tr>
+    </tr>
+    <tr>
       <td><a href="http://schema.org/dateModified">dateModified</a></td>
       <td>SHOULD</td>
-      <td>The time this CPM provenance file was last modified/written (not necessarily when the bundle included was
-         finalized or the file was added to the RO-Crate).
-         <p>
-            MUST be a string with format "ddMMYYYY".
-         </p>
+      <td>
+        The time this CPM provenance file was last modified/written (not necessarily when
+        the bundle included was finalized or the file was added to the RO-Crate).
+        <p>MUST be a string with format "ddMMYYYY".</p>
       </td>
-   </tr>
-   <tr>
+    </tr>
+    <tr>
       <td><a href="http://schema.org/encodingFormat">encodingFormat</a></td>
       <td>MUST</td>
-      <td>Encoding of the CPM provenance file.
-         <p>
-            Array MUST contain a string indicating the IANA media type of the file, e.g. "text/turtle" or
-            "text/provenance-notation" or "application/ld+json".
-         <p>
-            Array MUST also contain a reference to a CreativeWork that indicates the PROV format used in the
-            serialization. "@id" SHOULD be one of:
-         <ul>
-            <li><a
-                  href="http://www.w3.org/TR/2013/REC-prov-n-20130430/">http://www.w3.org/TR/2013/REC-prov-n-20130430/</a>
-               (PROV-N)
-            <li><a
-                  href="http://www.w3.org/TR/2013/REC-prov-o-20130430/">http://www.w3.org/TR/2013/REC-prov-o-20130430/</a>
-               (PROV-O as RDF or OWL)
-            <li><a
-                  href="http://www.w3.org/TR/2013/NOTE-prov-xml-20130430/">http://www.w3.org/TR/2013/NOTE-prov-xml-20130430/</a>
-               (PROV-XML)
-            <li><a
-                  href="http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/">http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/</a>
-               (PROV-JSON)
-               <p>
-                  Example:
-               </p>
-               <pre>
+      <td>
+        Encoding of the CPM provenance file.
+        <p>Array MUST contain a string indicating the IANA media type of the file, e.g.
+        <code>text/turtle</code> or <code>text/provenance-notation</code> or <code>application/ld+json</code>.</p>
+        <p>Array MUST also contain a reference to a CreativeWork that indicates the PROV
+        format used in the serialization, which <code>@id</code> SHOULD be one of:</p>
+        <ul>
+          <li><a href=
+          "http://www.w3.org/TR/2013/REC-prov-n-20130430/">http://www.w3.org/TR/2013/REC-prov-n-20130430/</a>
+          (PROV-N)</li>
+          <li><a href=
+          "http://www.w3.org/TR/2013/REC-prov-o-20130430/">http://www.w3.org/TR/2013/REC-prov-o-20130430/</a>
+          (PROV-O as RDF or OWL)</li>
+          <li><a href=
+          "http://www.w3.org/TR/2013/NOTE-prov-xml-20130430/">http://www.w3.org/TR/2013/NOTE-prov-xml-20130430/</a>
+          (PROV-XML)</li>
+          <li>
+            <a href=
+            "http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/">http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/</a>
+            (PROV-JSON)
+            <p>Example:</p>
+            <pre>
 { "@id: "provone.ttl", 
   "@type" ["File", "CPMProvenanceFile"],
   "encodingFormat": [ 
@@ -104,104 +104,103 @@ This document specifies how to identify and handle CPM compliant provenance file
    ]
 },
 { "@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/", 
-  "@type": "CreativeWork"
-}
-               </pre>
-            </li>
-         </ul>
+  "@type": "CreativeWork",
+  "name": "PROV-O format"
+}              
+</pre>
+          </li>
+        </ul>
       </td>
-   </tr>
-   <tr>
+    </tr>
+    <tr>
       <td><a href="http://schema.org/about">about</a></td>
       <td>SHOULD</td>
-      <td>Array contains entity identifiers, which are documented by the CPM provenance file.
-         <p>
-            SHOULD contain at least one identifier.
-         </p>            
+      <td>
+        Array contains entity identifiers, which are documented by the CPM provenance
+        file.
+        <p>SHOULD contain at least one identifier.</p>
       </td>
-   </tr>
-   <tr>
-      <th colspan="3"><strong>CPMMetaProvenanceFile</strong> <br />
+    </tr>
+    <tr>
+      <th colspan="3"><strong>CPMMetaProvenanceFile</strong><br />
       extends CPMProvenanceFile</th>
-   </tr>
-   <tr>
+    </tr>
+    <tr>
       <td>@type</td>
       <td>MUST</td>
-      <td>Type that identifies the CPM meta provenance file.
-         <p>
-            Array MUST include "File". MUST include CPMMetaProvenanceFile
+      <td>
+        Type that identifies the CPM meta provenance file.
+        <p>Array MUST include <code>File</code> and <code>CPMMetaProvenanceFile</code></p>
       </td>
-   </tr>
-   <tr>
+    </tr>
+    <tr>
       <td>@id</td>
       <td>MUST</td>
-      <td>Identifier of the CPM meta provenance file.
-         <p>
-            SHOULD be an absolute URI , but MAY be a relative URI to a data entity in the crate (e.g.
-            <code>"provenance/prov-meta.jsonld"</code>)
+      <td>
+        Identifier of the CPM meta provenance file.
+        <p>SHOULD be an absolute URI, but MAY be a relative URI to a data entity in the
+        crate (e.g. <code>"provenance/prov-meta.jsonld"</code>)</p>
       </td>
-   </tr>
-   <tr>
+    </tr>
+    <tr>
       <td><a href="http://schema.org/dateModified">dateModified</a></td>
       <td>SHOULD</td>
-      <td>The time this CPM meta provenance file was last modified/written (not necessarily when the bundle included was
-         finalized or the file was added to the RO-Crate).
-         <p>
-            MUST be a string with format "ddMMYYYY".
-         </p>
+      <td>
+        The time this CPM meta provenance file was last modified/written (not necessarily
+        when the bundle included was finalized or the file was added to the RO-Crate).
+        <p>MUST be a string with format "ddMMYYYY".</p>
       </td>
-   </tr>
-   <tr>
+    </tr>
+    <tr>
       <td><a href="http://schema.org/encodingFormat">encodingFormat</a></td>
       <td>MUST</td>
-      <td>Encoding of the CPM meta provenance file.
-         <p>
-            Array MUST contain a string indicating the IANA media type of the file, e.g. "text/turtle" or
-            "text/provenance-notation" or "application/ld+json".
-         <p>
-            Array MUST also contain a reference to a CreativeWork that indicates the PROV format used in the
-            serialization. "@id" SHOULD be one of:
-         <ul>
-            <li><a
-                  href="http://www.w3.org/TR/2013/REC-prov-n-20130430/">http://www.w3.org/TR/2013/REC-prov-n-20130430/</a>
-               (PROV-N)
-            <li><a
-                  href="http://www.w3.org/TR/2013/REC-prov-o-20130430/">http://www.w3.org/TR/2013/REC-prov-o-20130430/</a>
-               (PROV-O as RDF or OWL)
-            <li><a
-                  href="http://www.w3.org/TR/2013/NOTE-prov-xml-20130430/">http://www.w3.org/TR/2013/NOTE-prov-xml-20130430/</a>
-               (PROV-XML)
-            <li><a
-                  href="http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/">http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/</a>
-               (PROV-JSON)
-                  Example:
-               <pre>
-                  { "@id: "provone.ttl", "@type" ["File", "CPMProvenanceFile"],
-                    "encodingFormat": [
-                        "text/turtle",
-                        {"@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/"}
-                     ]
-                  },
-                  {  "@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/",
-                     "@type": "CreativeWork"
-                  }
-               </pre>
-            </li>
-         </ul>
+      <td>
+        Encoding of the CPM meta provenance file.
+        <p>Array MUST contain a string indicating the IANA media type of the file, e.g.
+        <code>text/turtle</code> or <code>text/provenance-notation</code> or <code>application/ld+json</code>.</p>
+        <p>Array MUST also contain a reference to a CreativeWork that indicates the PROV
+        format used in the serialization, which <code>@id</code> SHOULD be one of:</p>
+        <ul>
+          <li><a href=
+          "http://www.w3.org/TR/2013/REC-prov-n-20130430/">http://www.w3.org/TR/2013/REC-prov-n-20130430/</a>
+          (PROV-N)</li>
+          <li><a href=
+          "http://www.w3.org/TR/2013/REC-prov-o-20130430/">http://www.w3.org/TR/2013/REC-prov-o-20130430/</a>
+          (PROV-O as RDF or OWL)</li>
+          <li><a href=
+          "http://www.w3.org/TR/2013/NOTE-prov-xml-20130430/">http://www.w3.org/TR/2013/NOTE-prov-xml-20130430/</a>
+          (PROV-XML)</li>
+          <li>
+            <a href=
+            "http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/">http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/</a>
+            (PROV-JSON) Example:
+            <pre>
+{ "@id: "provone.ttl", 
+   "@type" ["File", "CPMProvenanceFile"],
+   "encodingFormat": [
+      "text/turtle",
+      {"@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/"}
+   ]
+},
+{  "@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/",
+   "@type": "CreativeWork",
+   "name": "PROV-O format"
+}             
+</pre>
+          </li>
+        </ul>
       </td>
-   </tr>
-   <tr>
+    </tr>
+    <tr>
       <td><a href="http://schema.org/hasPart">hasPart</a></td>
       <td>MUST</td>
-      <td>Identifiers of meta provenance bundles present in the CPM meta provenance file.
-         <p>
-            Array MUST contain absolute URIs. URIs MUST match the expanded bundle identifiers as used internally in the
-            CPM provenance files.
-         </p>
+      <td>
+        Identifiers of meta provenance bundles present in the CPM meta provenance file.
+        <p>Array MUST contain absolute URIs. URIs MUST match the expanded bundle
+        identifiers as used internally in the CPM provenance files.</p>
       </td>
-   </tr>
+    </tr>
 </table>
-
 
 
 ## Example
@@ -210,9 +209,10 @@ The example RO-Crate documents a single step computation implemented as a python
 
 
 ```json
-{ "@context": ["https://w3id.org/ro/crate/1.1/context",
-  { "CPMProvenanceFile": "https://w3id.org/ro/terms/cpm#CPMProvenanceFile",
-    "CPMMetaProvenanceFile": "https://w3id.org/ro/terms/cpm#CPMMetaProvenanceFile",
+{ "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    { "CPMProvenanceFile": "https://w3id.org/ro/terms/cpm#CPMProvenanceFile",
+      "CPMMetaProvenanceFile": "https://w3id.org/ro/terms/cpm#CPMMetaProvenanceFile"
   ],
   "@graph": [
 
@@ -228,34 +228,22 @@ The example RO-Crate documents a single step computation implemented as a python
     "datePublished": "2022",
     "conformsTo": [
        {"@id": "https://w3id.org/ro/wfrun/0.1/process"},
-	    {"@id": "https://w3id.org/cpm/crate/0.1"},
+       {"@id": "https://w3id.org/cpm/crate/0.1"},
     ],
     "name": "...",
     "description": "",
     "hasPart": [
-        {
-          "@id": "INPUT_DATASET_PATH"
-        },
-        {
-          "@id": "OUTPUT_DATASET_PATH"
-        },
-        {
-          "@id": "COMPUTATION_LOG_FILE"
-        },
-        {
-          "@id": "CPM_COMPLIANT_PROVENANCE"
-        },
-        {
-          "@id": "COMPUTATION_SCRIPT"
-        },
-        {
-          "@id": "CPM_PROVENANCE_GENERATION_SCRIPT"
-        }
+        { "@id": "INPUT_DATASET_PATH" },
+        { "@id": "OUTPUT_DATASET_PATH" },
+        { "@id": "COMPUTATION_LOG_FILE" },
+        { "@id": "CPM_COMPLIANT_PROVENANCE" },
+        { "@id": "COMPUTATION_SCRIPT" },
+        { "@id": "CPM_PROVENANCE_GENERATION_SCRIPT" }
       ],
-	"mentions": [
-		{ "@id": "#Exec-computation"},
-		{ "@id": "#Exec-CPM-provgen"}
-	]
+    "mentions": [
+      { "@id": "#Exec-computation"},
+      { "@id": "#Exec-CPM-provgen"}
+    ]
  },
  {
    "@id": "INPUT_DATASET_PATH",
@@ -295,8 +283,9 @@ The example RO-Crate documents a single step computation implemented as a python
    "description": "CPM compliant provenance file generated based on 
 the computation log file.",
    "encodingFormat": [
-	"text/provenance-notation",
-{ "@id": "http://www.w3.org/TR/2013/REC-prov-n-20130430/"},
+      "text/provenance-notation",
+      { "@id": "http://www.w3.org/TR/2013/REC-prov-n-20130430/"},
+   ],
    "name": "",
    "about": [{"@id": "#Exec-computation"}]
 
@@ -332,31 +321,14 @@ the computation log file.",
           {"@id": "CPM_COMPLIANT_PROVENANCE"}
         ]
  }
- ]
+
+]
 }
 ```
 
 
-
-
-
-
 ## Notes
 
-[^1]:
-     The table structure copied from ro crate workflow run draft
+* Some PROV formats like PROV-N and PROV-O in JSON-LD support multiple bundles in the same document. This feature can be used if there is no need for different access control on different bundles.
 
-[^2]:
-     PROV formats that support identified bundles SHOULD ensure their internally defined identifier also matches this identifier.
-
-[^3]:
-     [https://www.researchobject.org/ro-crate/](https://www.researchobject.org/ro-crate/) 
-
-[^4]:
-     Some PROV formats like PROV-N and PROV-O in JSON-LD support multiple bundles in the same document. This feature can be used if there is no need for different access control on different bundles.
-
-[^5]:
-     The table structure copied from ro crate workflow run draft
-
-[^6]:
-     PROV formats that support identified bundles SHOULD ensure their internally defined identifier also match this identifier.
+* PROV formats that support identified bundles SHOULD ensure their internally defined identifier also match this identifier.     
