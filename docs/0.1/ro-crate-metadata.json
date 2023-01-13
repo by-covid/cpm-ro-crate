@@ -1,0 +1,204 @@
+{ "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context", 
+  "@graph": [
+
+  {
+    "@id": "ro-crate-metadata.json",
+    "@type": "CreativeWork",
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
+    "about": {"@id": "https://w3id.org/cpm/ro-crate/0.1"}
+  },  
+  {
+    "@id": "https://w3id.org/cpm/ro-crate/0.1",
+    "@type": "Dataset",
+    "identifier": "https://w3id.org/cpm/ro-crate/0.1",
+    "name": "Common Provenance Model RO-Crate profile (crate)",
+    "author": [
+        { "@id": "https://orcid.org/0000-0002-0003-2024" },
+        { "@id": "https://orcid.org/0000-0001-9842-9718" },
+        { "@id": "https://orcid.org/0000-0001-8271-5429" }
+    ],
+    "hasPart": [
+        { "@id": "index.html" },
+        { "@id": "#mustIdentifier" },
+        { "@id": "#shouldDateModified" },
+        { "@id": "#mustEncodingFormat" },
+        { "@id": "#shouldAbout" },
+        { "@id": "#mustHasPart" },
+        { "@id": "https://w3id.org/cpm/ro-crate#" }
+    ],
+    "mentions": [
+
+    ],
+    "citation": { "@id": "https://doi.org/10.1038/s41597-022-01537-6" }    
+  },
+  {
+    "@id": "index.html",
+    "@type": "WebPage",
+    "name": "Common Provenance Model RO-Crate profile (HTML)",
+    "encodingFormat": "text/html",
+    "about": "./"
+  },
+
+  { 
+    "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile",
+    "@type": ["DefinedTerm", "Class", "rdfs:Class"],
+    "termCode": "CPMProvenanceFile",
+    "name": "CPM Provenance file",
+    "rdfs:label": "CPMProvenanceFile",
+    "description": "A provenance file in a PROV format, that follows the expectations of the Common Provenance Model (CPM)",
+    "rdfs:comment": "A provenance file in a PROV format, that follows the expectations of the Common Provenance Model (CPM)",
+    "domainIncludes": [
+        { "@id": "http://schema.org/identifier" },
+        { "@id": "http://schema.org/dateModified" },
+        { "@id": "http://schema.org/encodingFormat" },
+        { "@id": "http://schema.org/about" }
+    ],
+    "url": "https://by-covid.github.io/cpm-ro-crate/#CPMProvenanceFile"
+  },
+  { 
+    "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile",
+    "@type": ["DefinedTerm", "Class", "rdfs:Class"],
+    "termCode": "CPMMetaProvenanceFile",
+    "name": "CPM Meta-provenance file",
+    "rdfs:label": "CPMMetaProvenanceFile",
+    "description": "A meta-provenance file that contains provenance of another provenance file",
+    "rdfs:comment": "A meta-provenance file that contains provenance of another provenance file",
+    "rdfs:isSubClassOf": { "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile" },
+    "url": "https://by-covid.github.io/cpm-ro-crate/#CPMMetaProvenanceFile",
+    "domainIncludes": [
+        { "@id": "http://schema.org/dateModified" },
+        { "@id": "http://schema.org/encodingFormat" },
+        { "@id": "http://schema.org/hasPart" }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cpm/ro-crate#",
+    "@type": "DefinedTermSet",
+    "name": "Namespace for Common Provenance Model RO-Crate model",
+    "url": "https://by-covid.github.io/cpm-ro-crate/",
+    "hasDefinedTerm": [
+      { "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile" },
+      { "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile" }
+    ]
+  },
+  { 
+    "@id": "http://schema.org/identifier",
+    "@type": "DefinedTerm",
+    "name": "identifier" 
+  },
+  { 
+    "@id": "http://schema.org/dateModified",
+    "@type": "DefinedTerm",
+    "name": "dateModified"
+  },
+  { 
+    "@id": "http://schema.org/encodingFormat", 
+    "@type": "DefinedTerm",
+    "name": "encodingFormat"
+  },
+  { 
+    "@id": "http://schema.org/about", 
+    "@type": "DefinedTerm",
+    "name": "about"
+  },
+  { 
+    "@id": "http://schema.org/hasPart",
+    "@type": "DefinedTerm", 
+    "name": "hasPart" 
+  },  
+  { "@id": "#mustIdentifier",
+    "@type": "Recommendation",
+    "name": "CPMProvenanceFile MUST have identifier",
+    "category": "MUST",
+    "reviewBody": "Identifier of a provenance bundle present in the CPM provenance file. \n\nMUST be an absolute URI. MUST match the expanded bundle identifier. MAY be equal to @id if absolute.\n\nNote: PROV formats that support identified bundles SHOULD ensure their internally defined identifier also matches this identifier.",
+    "itemReviewed": { "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile"},
+    "assesses": { "@id": "http://schema.org/identifier" }
+  },
+  { "@id": "#shouldDateModified",
+    "@type": "Recommendation",
+    "name": "CPMProvenanceFile SHOULD have dateModified",
+    "category": "SHOULD",
+    "reviewBody": "The time this CPM provenance file was last modified/written (not necessarily when the bundle included was finalized or the file was added to the RO-Crate).",
+    "itemReviewed": [
+        { "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile"},
+        { "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile" }
+    ],
+    "assesses": { "@id": "http://schema.org/dateModified" }
+  },
+  { "@id": "#mustEncodingFormat",
+    "@type": "Recommendation",
+    "name": "CPMProvenanceFile MUST have encodingFormat",
+    "category": "MUST",
+    "reviewBody": "Array MUST contain a string indicating the IANA media type of the file, e.g. text/turtle or text/provenance-notation or application/ld+json.\n\nArray MUST also contain a reference to a CreativeWork that indicates the PROV format used in the serialization, which @id SHOULD be one of:",
+    "itemReviewed": [
+        { "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile"},
+        { "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile" }
+    ],
+    "assesses": [
+        { "@id": "http://schema.org/encodingFormat" },
+        { "@id": "http://www.w3.org/TR/2013/REC-prov-n-20130430/" },
+        { "@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/" },
+        { "@id": "http://www.w3.org/TR/2013/NOTE-prov-xml-20130430/" },
+        { "@id": "http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/"}      
+    ]
+  },
+  {
+    "@id": "#shouldAbout",
+    "@type": "Recommendation",
+    "name": "CPMProvenanceFile SHOULD have about",
+    "category": "SHOULD",
+    "reviewBody": "Array contains entity identifiers, which are documented by the CPM provenance file.",
+    "itemReviewed": { "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile"},
+    "assesses": { "@id": "http://schema.org/about" }
+  },
+  {
+    "@id": "#mustHasPart",
+    "@type": "Recommendation",
+    "name": "CPMMetaProvenanceFile MUST have hasPart",
+    "category": "SHOULD",
+    "reviewBody": "Identifiers of meta provenance bundles present in the CPM meta provenance file. \n\nArray MUST contain absolute URIs. URIs MUST match the expanded bundle identifiers as used internally in the CPM provenance files.",
+    "itemReviewed": { "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile"},
+    "assesses": { "@id": "http://schema.org/hasPart" },    
+  },  
+  { 
+    "@id": "http://www.w3.org/TR/2013/REC-prov-n-20130430/",
+    "@type": "CreativeWork",
+    "name": "PROV-N"
+  },
+  { 
+    "@id": "http://www.w3.org/TR/2013/REC-prov-o-20130430/",
+    "@type": "CreativeWork",
+    "name": "PROV-O"
+  },
+  { 
+    "@id": "http://www.w3.org/TR/2013/NOTE-prov-xml-20130430/",
+    "@type": "CreativeWork",
+    "name": "PROV-XML"
+  },
+  { 
+    "@id": "http://www.w3.org/Submission/2013/SUBM-prov-json-20130424/",
+    "@type": "CreativeWork",
+    "name": "PROV-JSON"
+  },
+  { 
+    "@id": "https://doi.org/10.1038/s41597-022-01537-6",
+    "@type": "ScholarlyWork",
+    "name": "Lightweight Distributed Provenance Model for Complex Real–world Environments"
+  },
+  { 
+    "@id": "https://orcid.org/0000-0001-9842-9718",
+    "@type": "Person", 
+    "name": "Stian Soiland-Reyes"
+  },
+  { 
+    "@id": "https://orcid.org/0000-0002-0003-2024",
+    "@type": "Person", 
+    "name": "Rudolf Wittner"
+  },
+  { 
+    "@id": "https://orcid.org/0000-0001-8271-5429",
+    "@type": "Person", 
+    "name": "Simone Leo"
+  }
+]
+}
