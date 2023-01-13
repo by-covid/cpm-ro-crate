@@ -33,7 +33,7 @@ This document specifies how to identify and handle CPM compliant provenance file
     <tr>
       <td colspan="3"></td>
     </tr>
-    <tr>
+    <tr id="CPMProvenanceFile">
       <th colspan="3"><strong>CPMProvenanceFile</strong><br />
       extends <a href="http://schema.org/MediaObject">MediaObject</a> (@id is
       resolvable), dataEntity</th>
@@ -126,7 +126,7 @@ This document specifies how to identify and handle CPM compliant provenance file
         <p>SHOULD contain at least one identifier.</p>
       </td>
     </tr>
-    <tr>
+    <tr id="CPMMetaProvenanceFile">
       <th colspan="3"><strong>CPMMetaProvenanceFile</strong><br />
       extends CPMProvenanceFile</th>
     </tr>
