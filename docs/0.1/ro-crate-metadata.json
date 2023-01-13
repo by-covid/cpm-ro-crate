@@ -142,7 +142,7 @@
     "category": "SHOULD",
     "reviewBody": "Identifiers of meta provenance bundles present in the CPM meta provenance file. \n\nArray MUST contain absolute URIs. URIs MUST match the expanded bundle identifiers as used internally in the CPM provenance files.",
     "itemReviewed": { "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile"},
-    "assesses": { "@id": "http://schema.org/hasPart" },    
+    "assesses": { "@id": "http://schema.org/hasPart" }
   },  
   { 
     "@id": "http://www.w3.org/TR/2013/REC-prov-n-20130430/",
