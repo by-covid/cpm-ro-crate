@@ -1,0 +1,395 @@
+
+
+<html>
+<head>
+
+
+<script type="application/ld+json"> 
+  {
+  "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
+      },
+      "about": {
+        "@id": "https://w3id.org/cpm/ro-crate/0.1"
+      }
+    },
+    {
+      "@id": "https://w3id.org/cpm/ro-crate",
+      "@type": [
+        "DataCatalog",
+        "Dataset"
+      ],
+      "identifier": "https://w3id.org/cpm/ro-crate",
+      "name": "Common Provenance Model RO-Crate profiles and vocabulary",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-0003-2024"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9842-9718"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8271-5429"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "https://w3id.org/cpm/ro-crate#"
+        }
+      ],
+      "dataset": [
+        {
+          "@id": "https://w3id.org/cpm/ro-crate/0.1"
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/cpm/ro-crate/0.1",
+      "@type": "Dataset",
+      "name": "Common Provenance Model RO-Crate profile 0.1",
+      "version": "0.1.0",
+      "subjectOf": [
+        "0.1/index.html",
+        "0.1/ro-crate-metadata.jsonld",
+        "0.1/ro-crate-preview.html"
+      ],
+      "@reverse": {
+        "about": [
+          {
+            "@id": "ro-crate-metadata.json"
+          }
+        ],
+        "dataset": [
+          {
+            "@id": "https://w3id.org/cpm/ro-crate"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "0.1/index.html",
+      "@type": "WebPage",
+      "name": "Common Provenance Model RO-Crate profile (HTML)",
+      "encodingFormat": "text/html"
+    },
+    {
+      "@id": "0.1/ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "encodingFormat": "application/ld+json",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2-DRAFT"
+      }
+    },
+    {
+      "@id": "0.1/ro-crate-preview.html",
+      "@type": "WebPage",
+      "name": "Common Provenance Model RO-Crate profile (HTML)",
+      "encodingFormat": "text/html"
+    },
+    {
+      "@id": "https://w3id.org/cpm/ro-crate#",
+      "@type": "DefinedTermSet",
+      "name": "Namespace for Common Provenance Model RO-Crate model",
+      "url": "https://by-covid.github.io/cpm-ro-crate/",
+      "hasDefinedTerm": [
+        {
+          "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile"
+        },
+        {
+          "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile"
+        }
+      ],
+      "@reverse": {
+        "hasPart": [
+          {
+            "@id": "https://w3id.org/cpm/ro-crate"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile",
+      "@type": [
+        "DefinedTerm",
+        "Class",
+        "rdfs:Class"
+      ],
+      "termCode": "CPMProvenanceFile",
+      "name": "CPM Provenance file",
+      "rdfs:label": "CPMProvenanceFile",
+      "description": "A provenance file in a PROV format, that follows the expectations of the Common Provenance Model (CPM)",
+      "rdfs:comment": "A provenance file in a PROV format, that follows the expectations of the Common Provenance Model (CPM)",
+      "domainIncludes": [
+        {
+          "@id": "http://schema.org/identifier"
+        },
+        {
+          "@id": "http://schema.org/dateModified"
+        },
+        {
+          "@id": "http://schema.org/encodingFormat"
+        },
+        {
+          "@id": "http://schema.org/about"
+        }
+      ],
+      "url": "https://by-covid.github.io/cpm-ro-crate/#CPMProvenanceFile",
+      "@reverse": {
+        "hasDefinedTerm": [
+          {
+            "@id": "https://w3id.org/cpm/ro-crate#"
+          }
+        ],
+        "rdfs:isSubClassOf": [
+          {
+            "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile",
+      "@type": [
+        "DefinedTerm",
+        "Class",
+        "rdfs:Class"
+      ],
+      "termCode": "CPMMetaProvenanceFile",
+      "name": "CPM Meta-provenance file",
+      "rdfs:label": "CPMMetaProvenanceFile",
+      "description": "A meta-provenance file that contains provenance of another provenance file",
+      "rdfs:comment": "A meta-provenance file that contains provenance of another provenance file",
+      "rdfs:isSubClassOf": {
+        "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile"
+      },
+      "url": "https://by-covid.github.io/cpm-ro-crate/#CPMMetaProvenanceFile",
+      "domainIncludes": [
+        {
+          "@id": "http://schema.org/dateModified"
+        },
+        {
+          "@id": "http://schema.org/encodingFormat"
+        },
+        {
+          "@id": "http://schema.org/hasPart"
+        }
+      ],
+      "@reverse": {
+        "hasDefinedTerm": [
+          {
+            "@id": "https://w3id.org/cpm/ro-crate#"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "http://schema.org/identifier",
+      "@type": "DefinedTerm",
+      "name": "identifier",
+      "@reverse": {
+        "domainIncludes": [
+          {
+            "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "http://schema.org/dateModified",
+      "@type": "DefinedTerm",
+      "name": "dateModified",
+      "@reverse": {
+        "domainIncludes": [
+          {
+            "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile"
+          },
+          {
+            "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "http://schema.org/encodingFormat",
+      "@type": "DefinedTerm",
+      "name": "encodingFormat",
+      "@reverse": {
+        "domainIncludes": [
+          {
+            "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile"
+          },
+          {
+            "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "http://schema.org/about",
+      "@type": "DefinedTerm",
+      "name": "about",
+      "@reverse": {
+        "domainIncludes": [
+          {
+            "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "http://schema.org/hasPart",
+      "@type": "DefinedTerm",
+      "name": "hasPart",
+      "@reverse": {
+        "domainIncludes": [
+          {
+            "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://doi.org/10.1038/s41597-022-01537-6",
+      "@type": "ScholarlyArticle",
+      "name": "Lightweight Distributed Provenance Model for Complex Real–world Environments"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9842-9718",
+      "@type": "Person",
+      "name": "Stian Soiland-Reyes",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "https://w3id.org/cpm/ro-crate"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0003-2024",
+      "@type": "Person",
+      "name": "Rudolf Wittner",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "https://w3id.org/cpm/ro-crate"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-8271-5429",
+      "@type": "Person",
+      "name": "Simone Leo",
+      "@reverse": {
+        "author": [
+          {
+            "@id": "https://w3id.org/cpm/ro-crate"
+          }
+        ]
+      }
+    }
+  ]
+}
+</script>
+
+    
+<!-- script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script -->
+<script src="https://unpkg.com/ro-crate-html-js/dist/ro-crate-dynamic.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta charset='utf-8'/>
+<style>
+
+table.table {
+  padding-bottom: 300px;
+}
+</style>
+</head>
+
+
+<body>
+
+  <nav class="navbar">
+
+    <ul class="nav navbar-nav" >
+        <li ><a href="#"><span class="glyphicon glyphicon-home dataset_name">&nbsp;Common Provenance Model RO-Crate profile 0.1</span></a></li>
+    </ul>
+
+  </nav>
+<div class="container">
+<div class="jumbotron">
+<h4 class="citation"></h3>
+<h3 class="item_name">Common Provenance Model RO-Crate profile 0.1</h4>
+
+
+<a href="./ro-crate-metadata.json">⬇️🏷️ Download all the metadata for <span class='name'>Common Provenance Model RO-Crate profile 0.1</span> in JSON-LD format</a>
+
+
+<div id="check"></div>
+
+
+</div>
+
+
+
+<div id="summary">
+<div class='all-meta'>
+           <div>
+            <h3><a href="https://w3id.org/cpm/ro-crate/0.1">Go to: </a> Common Provenance Model RO-Crate profile 0.1</h3>
+            
+            
+            
+            
+        <div id="https://w3id.org/cpm/ro-crate/0.1">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://w3id.org/cpm/ro-crate/0.1">https://w3id.org/cpm/ro-crate/0.1</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Common Provenance Model RO-Crate profile 0.1</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>Dataset</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">version<span>&nbsp;</span><a href="http://schema.org/version">[?]</a></th>
+            <td style='text-align:left'><span>0.1.0</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">subjectOf<span>&nbsp;</span><a href="http://schema.org/subjectOf">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><span>0.1/index.html</span></li>
+                        
+                        <li><span>0.1/ro-crate-metadata.jsonld</span></li>
+                        
+                        <li><span>0.1/ro-crate-preview.html</span></li>
+                        </ul></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
+            <td style='text-align:left'><a href="#ro-crate-metadata.json">ro-crate-metadata.json</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">dataset<span>&nbsp;</span><a href="http://schema.org/dataset">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//w3id.org/cpm/ro-crate">Common Provenance Model RO-Crate profiles and vocabulary</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+
+        </div>
+        <hr/><br/><br/></div>
+</div>
+
+
+
+
+
+</body>
+</html>
