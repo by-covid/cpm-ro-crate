@@ -1,4 +1,10 @@
-{ "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context", 
+{ "@context": [
+    "https://w3id.org/ro/crate/1.2-DRAFT/context",
+    {
+      "CPMProvenanceFile": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile",
+      "CPMMetaProvenanceFile": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile"
+    }
+  ],  
   "@graph": [
 
   {
@@ -12,6 +18,7 @@
     "@type": "Dataset",
     "identifier": "https://w3id.org/cpm/ro-crate/0.1",
     "name": "Common Provenance Model RO-Crate profile (crate)",
+    "version": "0.1.0",
     "author": [
         { "@id": "https://orcid.org/0000-0002-0003-2024" },
         { "@id": "https://orcid.org/0000-0001-9842-9718" },
@@ -26,9 +33,6 @@
         { "@id": "#mustHasPart" },
         { "@id": "https://w3id.org/cpm/ro-crate#" }
     ],
-    "mentions": [
-
-    ],
     "citation": { "@id": "https://doi.org/10.1038/s41597-022-01537-6" }    
   },
   {
@@ -41,35 +45,15 @@
 
   { 
     "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile",
-    "@type": ["DefinedTerm", "Class", "rdfs:Class"],
+    "@type": "DefinedTerm",
     "termCode": "CPMProvenanceFile",
-    "name": "CPM Provenance file",
-    "rdfs:label": "CPMProvenanceFile",
-    "description": "A provenance file in a PROV format, that follows the expectations of the Common Provenance Model (CPM)",
-    "rdfs:comment": "A provenance file in a PROV format, that follows the expectations of the Common Provenance Model (CPM)",
-    "domainIncludes": [
-        { "@id": "http://schema.org/identifier" },
-        { "@id": "http://schema.org/dateModified" },
-        { "@id": "http://schema.org/encodingFormat" },
-        { "@id": "http://schema.org/about" }
-    ],
-    "url": "https://by-covid.github.io/cpm-ro-crate/#CPMProvenanceFile"
+    "name": "CPM Provenance file"
   },
   { 
     "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile",
-    "@type": ["DefinedTerm", "Class", "rdfs:Class"],
+    "@type": "DefinedTerm",
     "termCode": "CPMMetaProvenanceFile",
-    "name": "CPM Meta-provenance file",
-    "rdfs:label": "CPMMetaProvenanceFile",
-    "description": "A meta-provenance file that contains provenance of another provenance file",
-    "rdfs:comment": "A meta-provenance file that contains provenance of another provenance file",
-    "rdfs:isSubClassOf": { "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile" },
-    "url": "https://by-covid.github.io/cpm-ro-crate/#CPMMetaProvenanceFile",
-    "domainIncludes": [
-        { "@id": "http://schema.org/dateModified" },
-        { "@id": "http://schema.org/encodingFormat" },
-        { "@id": "http://schema.org/hasPart" }
-    ]
+    "name": "CPM Meta-provenance file"
   },
   {
     "@id": "https://w3id.org/cpm/ro-crate#",
