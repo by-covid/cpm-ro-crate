@@ -11,7 +11,7 @@
     "@id": "https://w3id.org/cpm/ro-crate/0.1",
     "@type": "Dataset",
     "identifier": "https://w3id.org/cpm/ro-crate/0.1",
-    "name": "Common Provenance Model RO-Crate profile",
+    "name": "Common Provenance Model RO-Crate profile (crate)",
     "author": [
         { "@id": "https://orcid.org/0000-0002-0003-2024" },
         { "@id": "https://orcid.org/0000-0001-9842-9718" },
@@ -19,24 +19,24 @@
     ],
     "hasPart": [
         { "@id": "index.html" },
-        { "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile" },
-        { "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile" },
         { "@id": "#mustIdentifier" },
         { "@id": "#shouldDateModified" },
         { "@id": "#mustEncodingFormat" },
         { "@id": "#shouldAbout" },
-        { "@id": "#mustHasPart" }
+        { "@id": "#mustHasPart" },
+        { "@id": "https://w3id.org/cpm/ro-crate#" }
     ],
     "mentions": [
 
     ],
-    "citation": { "@id": "https://doi.org/10.1038/s41597-022-01537-6" }
+    "citation": { "@id": "https://doi.org/10.1038/s41597-022-01537-6" }    
   },
   {
     "@id": "index.html",
     "@type": "WebPage",
+    "name": "Common Provenance Model RO-Crate profile (HTML)",
     "encodingFormat": "text/html",
-    "about": "./"    
+    "about": "./"
   },
 
   { 
@@ -75,7 +75,11 @@
     "@id": "https://w3id.org/cpm/ro-crate#",
     "@type": "DefinedTermSet",
     "name": "Namespace for Common Provenance Model RO-Crate model",
-    "url": "https://by-covid.github.io/cpm-ro-crate/"
+    "url": "https://by-covid.github.io/cpm-ro-crate/",
+    "hasDefinedTerm": [
+      { "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile" },
+      { "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile" }
+    ]
   },
   { 
     "@id": "http://schema.org/identifier",
@@ -195,7 +199,6 @@
     "@id": "https://orcid.org/0000-0001-8271-5429",
     "@type": "Person", 
     "name": "Simone Leo"
-}
-
+  }
 ]
 }
