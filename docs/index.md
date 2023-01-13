@@ -10,3 +10,22 @@ This document specifies how to identify and handle CPM compliant provenance file
 ## Releases
 
 * [cpm-ro-crate 0.1](0.1/) (PID: <https://w3id.org/cpm/ro-crate/0.1>)
+
+## Vocabulary
+
+The following terms are defined in the namespace <https://w3id.org/cpm/ro-crate#> and can be used with RO-Crate when conforming to this profile.
+
+### CPMProvenanceFile
+
+* Permalink: <https://w3id.org/cpm/ro-crate#CPMProvenanceFile>
+* Definition: A provenance file in a PROV format, that follows the expectations of the [Common Provenance Model (CPM)](https://doi.org/10.1038/s41597-022-01537-6)
+* Expected properties: [CPMProvenanceFile requirements](0.1/#CPMProvenanceFile)
+
+### CPMMetaProvenanceFile
+
+* Permalink: <https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile>
+* Subclass of: `CPMProvenanceFile`
+* Definition: A meta-provenance file that contains provenance of another provenance file.
+* Expected properties: [CPMProvenanceFile requirements](0.1/#CPMMetaProvenanceFile)
+
+
