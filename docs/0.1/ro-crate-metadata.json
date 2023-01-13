@@ -19,6 +19,7 @@
     "identifier": "https://w3id.org/cpm/ro-crate/0.1",
     "name": "Common Provenance Model RO-Crate profile (crate)",
     "version": "0.1.0",
+    "includedInDataCatalog": { "@id": "https://w3id.org/cpm/ro-crate" },
     "author": [
         { "@id": "https://orcid.org/0000-0002-0003-2024" },
         { "@id": "https://orcid.org/0000-0001-9842-9718" },
@@ -35,9 +36,13 @@
     ],
     "citation": { "@id": "https://doi.org/10.1038/s41597-022-01537-6" }    
   },
+  { "@id": "https://w3id.org/cpm/ro-crate",
+    "@type": "DataCatalog",    
+    "name": "Common Provenance Model RO-Crate profiles and vocabulary"
+  },
   {
     "@id": "index.html",
-    "@type": "WebPage",
+    "@type": "File",
     "name": "Common Provenance Model RO-Crate profile (HTML)",
     "encodingFormat": "text/html",
     "about": "./"
@@ -59,7 +64,6 @@
     "@id": "https://w3id.org/cpm/ro-crate#",
     "@type": "DefinedTermSet",
     "name": "Namespace for Common Provenance Model RO-Crate model",
-    "url": "https://by-covid.github.io/cpm-ro-crate/",
     "hasDefinedTerm": [
       { "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile" },
       { "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile" }
@@ -113,7 +117,7 @@
     "@type": "Recommendation",
     "name": "CPMProvenanceFile MUST have encodingFormat",
     "category": "MUST",
-    "reviewBody": "Array MUST contain a string indicating the IANA media type of the file, e.g. text/turtle or text/provenance-notation or application/ld+json.\n\nArray MUST also contain a reference to a CreativeWork that indicates the PROV format used in the serialization, which @id SHOULD be one of:",
+    "reviewBody": "Array MUST contain a string indicating the IANA media type of the file, e.g. text/turtle or text/provenance-notation or application/ld+json.\n\nArray MUST also contain a reference to a CreativeWork that indicates the PROV format used in the serialization.",
     "itemReviewed": [
         { "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile"},
         { "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile" }

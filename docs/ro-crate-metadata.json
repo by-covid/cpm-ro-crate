@@ -5,11 +5,11 @@
     "@id": "ro-crate-metadata.json",
     "@type": "CreativeWork",
     "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
-    "about": {"@id": "https://w3id.org/cpm/ro-crate/0.1"}
+    "about": {"@id": "https://w3id.org/cpm/ro-crate"}
   },  
   {
     "@id": "https://w3id.org/cpm/ro-crate",
-    "@type": ["DataCatalog", "Dataset"],
+    "@type": ["Dataset", "DataCatalog"],
     "identifier": "https://w3id.org/cpm/ro-crate",
     "name": "Common Provenance Model RO-Crate profiles and vocabulary",
     "author": [
@@ -30,26 +30,27 @@
     "name": "Common Provenance Model RO-Crate profile 0.1",
     "version": "0.1.0",
     "subjectOf": [
-      "0.1/index.html",
-      "0.1/ro-crate-metadata.jsonld",
-      "0.1/ro-crate-preview.html"
+      {"@id": "0.1/index.html"},
+      {"@id": "0.1/ro-crate-metadata.jsonld"},
+      {"@id": "0.1/ro-crate-preview.html"}
     ]
   },  
   {
     "@id": "0.1/index.html",
-    "@type": "WebPage",
+    "@type": "File",
     "name": "Common Provenance Model RO-Crate profile (HTML)",
     "encodingFormat": "text/html"
   },
   {
-    "@id": "0.1/ro-crate-metadata.json",
+    "@id": "0.1/ro-crate-metadata.jsonld",
     "@type": "CreativeWork",
+    "sameAs": { "@id": "0.1/ro-crate-metadata.json"},
     "encodingFormat": "application/ld+json",
     "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"}
   },
   {
     "@id": "0.1/ro-crate-preview.html",
-    "@type": "WebPage",
+    "@type": "CreativeWork",
     "name": "Common Provenance Model RO-Crate profile (HTML)",
     "encodingFormat": "text/html"
   },  
@@ -57,7 +58,6 @@
     "@id": "https://w3id.org/cpm/ro-crate#",
     "@type": "DefinedTermSet",
     "name": "Namespace for Common Provenance Model RO-Crate model",
-    "url": "https://by-covid.github.io/cpm-ro-crate/",
     "hasDefinedTerm": [
       { "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile" },
       { "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile" }
@@ -76,8 +76,7 @@
         { "@id": "http://schema.org/dateModified" },
         { "@id": "http://schema.org/encodingFormat" },
         { "@id": "http://schema.org/about" }
-    ],
-    "url": "https://by-covid.github.io/cpm-ro-crate/#CPMProvenanceFile"
+    ]
   },
   { 
     "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile",
@@ -88,7 +87,6 @@
     "description": "A meta-provenance file that contains provenance of another provenance file",
     "rdfs:comment": "A meta-provenance file that contains provenance of another provenance file",
     "rdfs:isSubClassOf": { "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile" },
-    "url": "https://by-covid.github.io/cpm-ro-crate/#CPMMetaProvenanceFile",
     "domainIncludes": [
         { "@id": "http://schema.org/dateModified" },
         { "@id": "http://schema.org/encodingFormat" },
