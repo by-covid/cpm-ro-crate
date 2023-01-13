@@ -1,0 +1,145 @@
+{ "@context": "https://w3id.org/ro/crate/1.2-DRAFT/context", 
+  "@graph": [
+
+  {
+    "@id": "ro-crate-metadata.json",
+    "@type": "CreativeWork",
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
+    "about": {"@id": "https://w3id.org/cpm/ro-crate/0.1"}
+  },  
+  {
+    "@id": "https://w3id.org/cpm/ro-crate",
+    "@type": ["DataCatalog", "Dataset"],
+    "identifier": "https://w3id.org/cpm/ro-crate",
+    "name": "Common Provenance Model RO-Crate profiles and vocabulary",
+    "author": [
+        { "@id": "https://orcid.org/0000-0002-0003-2024" },
+        { "@id": "https://orcid.org/0000-0001-9842-9718" },
+        { "@id": "https://orcid.org/0000-0001-8271-5429" }
+    ],
+    "hasPart": [
+      { "@id": "https://w3id.org/cpm/ro-crate#" }
+    ],
+    "dataset": [
+      { "@id": "https://w3id.org/cpm/ro-crate/0.1" }
+    ]
+  },
+  { 
+    "@id": "https://w3id.org/cpm/ro-crate/0.1",
+    "@type": "Dataset",
+    "name": "Common Provenance Model RO-Crate profile 0.1",
+    "version": "0.1.0",
+    "subjectOf": [
+      "0.1/index.html",
+      "0.1/ro-crate-metadata.jsonld",
+      "0.1/ro-crate-preview.html"
+    ]
+  },  
+  {
+    "@id": "0.1/index.html",
+    "@type": "WebPage",
+    "name": "Common Provenance Model RO-Crate profile (HTML)",
+    "encodingFormat": "text/html"
+  },
+  {
+    "@id": "0.1/ro-crate-metadata.json",
+    "@type": "CreativeWork",
+    "encodingFormat": "application/ld+json",
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"}
+  },
+  {
+    "@id": "0.1/ro-crate-preview.html",
+    "@type": "WebPage",
+    "name": "Common Provenance Model RO-Crate profile (HTML)",
+    "encodingFormat": "text/html"
+  },  
+  {
+    "@id": "https://w3id.org/cpm/ro-crate#",
+    "@type": "DefinedTermSet",
+    "name": "Namespace for Common Provenance Model RO-Crate model",
+    "url": "https://by-covid.github.io/cpm-ro-crate/",
+    "hasDefinedTerm": [
+      { "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile" },
+      { "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile" }
+    ]
+  },
+  { 
+    "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile",
+    "@type": ["DefinedTerm", "Class", "rdfs:Class"],
+    "termCode": "CPMProvenanceFile",
+    "name": "CPM Provenance file",
+    "rdfs:label": "CPMProvenanceFile",
+    "description": "A provenance file in a PROV format, that follows the expectations of the Common Provenance Model (CPM)",
+    "rdfs:comment": "A provenance file in a PROV format, that follows the expectations of the Common Provenance Model (CPM)",
+    "domainIncludes": [
+        { "@id": "http://schema.org/identifier" },
+        { "@id": "http://schema.org/dateModified" },
+        { "@id": "http://schema.org/encodingFormat" },
+        { "@id": "http://schema.org/about" }
+    ],
+    "url": "https://by-covid.github.io/cpm-ro-crate/#CPMProvenanceFile"
+  },
+  { 
+    "@id": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile",
+    "@type": ["DefinedTerm", "Class", "rdfs:Class"],
+    "termCode": "CPMMetaProvenanceFile",
+    "name": "CPM Meta-provenance file",
+    "rdfs:label": "CPMMetaProvenanceFile",
+    "description": "A meta-provenance file that contains provenance of another provenance file",
+    "rdfs:comment": "A meta-provenance file that contains provenance of another provenance file",
+    "rdfs:isSubClassOf": { "@id": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile" },
+    "url": "https://by-covid.github.io/cpm-ro-crate/#CPMMetaProvenanceFile",
+    "domainIncludes": [
+        { "@id": "http://schema.org/dateModified" },
+        { "@id": "http://schema.org/encodingFormat" },
+        { "@id": "http://schema.org/hasPart" }
+    ]
+  },
+
+  { 
+    "@id": "http://schema.org/identifier",
+    "@type": "DefinedTerm",
+    "name": "identifier" 
+  },
+  { 
+    "@id": "http://schema.org/dateModified",
+    "@type": "DefinedTerm",
+    "name": "dateModified"
+  },
+  { 
+    "@id": "http://schema.org/encodingFormat", 
+    "@type": "DefinedTerm",
+    "name": "encodingFormat"
+  },
+  { 
+    "@id": "http://schema.org/about", 
+    "@type": "DefinedTerm",
+    "name": "about"
+  },
+  { 
+    "@id": "http://schema.org/hasPart",
+    "@type": "DefinedTerm", 
+    "name": "hasPart" 
+  },  
+  { 
+    "@id": "https://doi.org/10.1038/s41597-022-01537-6",
+    "@type": "ScholarlyArticle",
+    "name": "Lightweight Distributed Provenance Model for Complex Real–world Environments"
+  },
+  { 
+    "@id": "https://orcid.org/0000-0001-9842-9718",
+    "@type": "Person", 
+    "name": "Stian Soiland-Reyes"
+  },
+  { 
+    "@id": "https://orcid.org/0000-0002-0003-2024",
+    "@type": "Person", 
+    "name": "Rudolf Wittner"
+  },
+  { 
+    "@id": "https://orcid.org/0000-0001-8271-5429",
+    "@type": "Person", 
+    "name": "Simone Leo"
+  }
+]
+}
