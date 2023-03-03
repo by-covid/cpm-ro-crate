@@ -18,7 +18,7 @@
     "@type": "Dataset",
     "identifier": "https://w3id.org/cpm/ro-crate/0.1",
     "name": "Common Provenance Model RO-Crate profile (crate)",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "includedInDataCatalog": { "@id": "https://w3id.org/cpm/ro-crate" },
     "author": [
         { "@id": "https://orcid.org/0000-0002-0003-2024" },
