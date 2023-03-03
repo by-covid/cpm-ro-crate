@@ -3,7 +3,7 @@
 * Title: Common Provenance Model RO-Crate profile
 * Authors: Rudolf Wittner, Stian Soiland-Reyes, Simone Leo
 * Date: 2023-01-11
-* Version: 0.1
+* Version: 0.2
 * Persistent identifier: <https://w3id.org/cpm/ro-crate/0.1>
 
 
