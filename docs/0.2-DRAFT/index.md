@@ -73,7 +73,6 @@ This document specifies how to identify and handle CPM compliant provenance file
       <td>
         The time this CPM provenance file was last modified/written (not necessarily when
         the bundle included was finalized or the file was added to the RO-Crate).
-        <p>MUST be a string with format "ddMMYYYY".</p>
       </td>
     </tr>
     <tr>
@@ -153,7 +152,6 @@ This document specifies how to identify and handle CPM compliant provenance file
       <td>
         The time this CPM meta provenance file was last modified/written (not necessarily
         when the bundle included was finalized or the file was added to the RO-Crate).
-        <p>MUST be a string with format "ddMMYYYY".</p>
       </td>
     </tr>
     <tr>
