@@ -4,7 +4,7 @@
 * Authors: Rudolf Wittner, Stian Soiland-Reyes, Simone Leo
 * Date: 2023-01-11
 * Version: 0.2
-* Persistent identifier: <https://w3id.org/cpm/ro-crate/0.1>
+* Persistent identifier: <https://w3id.org/cpm/ro-crate/0.2>
 
 
 Research objects, such as data, experimental results, computational models, or biological samples, are exchanged between organizations, so each of the organizations can provide provenance information only about a part of the research object’s life cycle. As a result, a complete provenance description of the object is then spread across different heterogeneous organizations. 
@@ -73,7 +73,6 @@ This document specifies how to identify and handle CPM compliant provenance file
       <td>
         The time this CPM provenance file was last modified/written (not necessarily when
         the bundle included was finalized or the file was added to the RO-Crate).
-        <p>MUST be a string with format "ddMMYYYY".</p>
       </td>
     </tr>
     <tr>
@@ -153,7 +152,6 @@ This document specifies how to identify and handle CPM compliant provenance file
       <td>
         The time this CPM meta provenance file was last modified/written (not necessarily
         when the bundle included was finalized or the file was added to the RO-Crate).
-        <p>MUST be a string with format "ddMMYYYY".</p>
       </td>
     </tr>
     <tr>
