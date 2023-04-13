@@ -10,6 +10,7 @@ This document specifies how to identify and handle CPM compliant provenance file
 ## Releases
 
 * [cpm-ro-crate 0.1](0.1/) (PID: <https://w3id.org/cpm/ro-crate/0.1>)
+* [cpm-ro-crate 0.2](0.2/) (PID: <https://w3id.org/cpm/ro-crate/0.2>)
 
 ## Vocabulary
 
