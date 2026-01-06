@@ -1,5 +1,5 @@
 { "@context": [
-    "https://w3id.org/ro/crate/1.2-DRAFT/context",
+    "https://w3id.org/ro/crate/1.2/context",
     {
       "CPMProvenanceFile": "https://w3id.org/cpm/ro-crate#CPMProvenanceFile",
       "CPMMetaProvenanceFile": "https://w3id.org/cpm/ro-crate#CPMMetaProvenanceFile"
@@ -10,7 +10,7 @@
   {
     "@id": "ro-crate-metadata.json",
     "@type": "CreativeWork",
-    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2-DRAFT"},
+    "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2"},
     "about": {"@id": "https://w3id.org/cpm/ro-crate/0.1"}
   },  
   {
@@ -18,7 +18,11 @@
     "@type": "Dataset",
     "identifier": "https://w3id.org/cpm/ro-crate/0.1",
     "name": "Common Provenance Model RO-Crate profile (crate)",
+    "description": "The Common Provenance Model (CPM) (https://doi.org/10.1038/s41597-022-01537-6) provides a baseline for distributed provenance chains. This document specifies how to identify and handle CPM compliant provenance files and CPM compliant meta-provenance files in an RO-Crate.",
     "version": "0.3.0-DRAFT",
+    "datePublished": "2023-01-11",
+    "license": "",
+    "keywords": ["provenance", "common provenance model", "PROV"],
     "includedInDataCatalog": { "@id": "https://w3id.org/cpm/ro-crate" },
     "author": [
         { "@id": "https://orcid.org/0000-0002-0003-2024" },
