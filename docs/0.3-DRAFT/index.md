@@ -4,6 +4,7 @@
 * Authors: Rudolf Wittner, Stian Soiland-Reyes, Simone Leo
 * Date: 2023-01-11
 * Version: 0.3-DRAFT
+* License: [Creative Commons Attribution 4.0 International](https://spdx.org/licenses/CC-BY-4.0.html)
 * Persistent identifier: <https://w3id.org/cpm/ro-crate/0.3-DRAFT>
 
 

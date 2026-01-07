@@ -21,7 +21,7 @@
     "description": "The Common Provenance Model (CPM) (https://doi.org/10.1038/s41597-022-01537-6) provides a baseline for distributed provenance chains. This document specifies how to identify and handle CPM compliant provenance files and CPM compliant meta-provenance files in an RO-Crate.",
     "version": "0.3.0-DRAFT",
     "datePublished": "2023-01-11",
-    "license": "",
+    "license": {"@id": "https://spdx.org/licenses/CC-BY-4.0"},
     "keywords": ["provenance", "common provenance model", "PROV"],
     "includedInDataCatalog": { "@id": "https://w3id.org/cpm/ro-crate" },
     "author": [
@@ -191,6 +191,11 @@
     "@id": "https://orcid.org/0000-0001-8271-5429",
     "@type": "Person", 
     "name": "Simone Leo"
+  },
+  {
+    "@id": "https://spdx.org/licenses/CC-BY-4.0",
+    "@type": "CreativeWork",
+    "name": "Creative Commons Attribution 4.0 International"
   }
 ]
 }
