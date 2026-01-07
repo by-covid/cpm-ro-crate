@@ -11,12 +11,12 @@
     "@id": "ro-crate-metadata.json",
     "@type": "CreativeWork",
     "conformsTo": {"@id": "https://w3id.org/ro/crate/1.2"},
-    "about": {"@id": "https://w3id.org/cpm/ro-crate/0.1"}
+    "about": {"@id": "https://w3id.org/cpm/ro-crate/0.3"}
   },  
   {
-    "@id": "https://w3id.org/cpm/ro-crate/0.1",
+    "@id": "https://w3id.org/cpm/ro-crate/0.3",
     "@type": "Dataset",
-    "identifier": "https://w3id.org/cpm/ro-crate/0.1",
+    "identifier": "https://w3id.org/cpm/ro-crate/0.3",
     "name": "Common Provenance Model RO-Crate profile (crate)",
     "description": "The Common Provenance Model (CPM) (https://doi.org/10.1038/s41597-022-01537-6) provides a baseline for distributed provenance chains. This document specifies how to identify and handle CPM compliant provenance files and CPM compliant meta-provenance files in an RO-Crate.",
     "version": "0.3.0-DRAFT",
